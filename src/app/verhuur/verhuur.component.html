@@ -1,0 +1,14 @@
+<div class="container"
+fxLayout="column"
+fxLayoutGap="10px">
+
+<mat-list fxFlex>
+  <mat-list-item *ngFor="let tenniscannon of tenniscannons">
+    <img matListAvatar src={{tenniscannon.foto}} alt={{tenniscannon.naam}}>
+    <h1 matline> {{tenniscannon.naam }} </h1>
+    <p matline>
+      <span> {{tenniscannon.omschrijving}} </span>
+    </p>
+  </mat-list-item>
+</mat-list>
+</div>
