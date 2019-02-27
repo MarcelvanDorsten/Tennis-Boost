@@ -11,7 +11,7 @@ fxLayoutGap="10px">
 
 <div fxFlex>
   <mat-grid-list cols="2" rowHeight="200px">
-  <mat-grid-tile *ngFor="let tenniscannon of tenniscannons">
+  <mat-grid-tile *ngFor="let tenniscannon of tenniscannons" (click) = "onSelect(tenniscannon)">
     <img height="200px" src={{tenniscannon.foto}} alt={{tenniscannon.naam}}>
     <mat-grid-tile-footer>
     <h1>{{tenniscannon.naam | uppercase}}</h1>
@@ -20,11 +20,12 @@ fxLayoutGap="10px">
 </mat-grid-list>
 </div>
 
-<div fxFlex *ngIf="selectedTenniscanon">
+<div fxFlex *ngIf="selectedTenniscannon">
+  <app-details [tenniscannon]="selectedTenniscannon"></app-details>
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-        <h3>{{selectedTenniscanon.naam | uppercase}}</h3>
+        <h3>{{selectedTenniscannon.naam | uppercase}}</h3>
       </mat-card-title>
     </mat-card-header>
     <img mat-card-image src={{selectedTenniscannon.foto}} alt={{selectedTenniscannon.naam}}>
@@ -33,7 +34,7 @@ fxLayoutGap="10px">
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>VOORKEUR</button>
-      <button mat-button>DEEL</button>
+      <button mat-button>VERGELIJK</button>
     </mat-card-actions>
   </mat-card>
 </div>

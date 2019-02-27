@@ -1,21 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TENNISCANNONS } from '../shared/tenniskanondetails';
 import { Tenniscannon } from '../shared/tenniskanon';
 
-const TENNISCANNONS: Tenniscannon[] = [
-  {
-    id: '0',
-    naam: 'Tennis Twist',
-    foto: '/assets/twist.jpg',
-    omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.'
-  },
-  {
-    id: '1',
-    naam: 'Tennis Cube',
-    foto: '/assets/cube.jpg',
-    omschrijving: 'De lichtste, meest compacte tennismachine die beschikbaar is voor beginnende en gevorderde spelers.'
-  }
-  ];
+
 
 @Component({
   selector: 'app-verhuur',
@@ -24,12 +12,16 @@ const TENNISCANNONS: Tenniscannon[] = [
 })
 export class VerhuurComponent implements OnInit {
 
-  tenniscannons = TENNISCANNONS;
-  selectedTenniscannon = TENNISCANNONS[0];
+  tenniscannons: Tenniscannon[] = TENNISCANNONS;
+  selectedTenniscannon: Tenniscannon;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+onSelect(tenniscannon: Tenniscannon) {
+  this.selectedTenniscannon = tenniscannon;
+}
 
 }
