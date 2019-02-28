@@ -14,6 +14,7 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { VerhuurComponent } from './verhuur/verhuur.component';
 import { DetailsComponent } from './details/details.component';
+import { TenniskanonService } from './services/tenniskanon.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { DetailsComponent } from './details/details.component';
     MatButtonModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [TenniskanonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

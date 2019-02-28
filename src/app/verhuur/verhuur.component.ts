@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TENNISCANNONS } from '../shared/tenniskanondetails';
 import { Tenniscannon } from '../shared/tenniskanon';
-
+import { TenniskanonService } from '../services/tenniskanon.service';
 
 
 @Component({
@@ -12,12 +11,13 @@ import { Tenniscannon } from '../shared/tenniskanon';
 })
 export class VerhuurComponent implements OnInit {
 
-  tenniscannons: Tenniscannon[] = TENNISCANNONS;
+  tenniscannons: Tenniscannon[];
   selectedTenniscannon: Tenniscannon;
 
-  constructor() { }
+  constructor (private tenniscannonService: TenniskanonService) { }
 
   ngOnInit() {
+    this.tenniscannons = this.tenniscannonService.getTenniscannons();
   }
 
 onSelect(tenniscannon: Tenniscannon) {

@@ -5,5 +5,5 @@ export class Tenniscannon {
     naam: string;
     foto: string;
     omschrijving: string; 
-    beoordelingen: Comment[];
+    comments: Comment[];
 }
