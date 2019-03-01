@@ -15,12 +15,16 @@ import { AppComponent } from './app.component';
 import { VerhuurComponent } from './verhuur/verhuur.component';
 import { DetailsComponent } from './details/details.component';
 import { TenniskanonService } from './services/tenniskanon.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VerhuurComponent,
-    DetailsComponent
+    DetailsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
