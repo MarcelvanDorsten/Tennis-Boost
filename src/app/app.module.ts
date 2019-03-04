@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { VerhuurComponent } from './verhuur/verhuur.component';
 import { DetailsComponent } from './details/details.component';
 import { TenniskanonService } from './services/tenniskanon.service';
+import { PromotieService } from './services/promotie.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -45,7 +46,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MatButtonModule,
     FlexLayoutModule
   ],
-  providers: [TenniskanonService],
+  providers: [
+    TenniskanonService,
+    PromotieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

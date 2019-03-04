@@ -1,3 +1,36 @@
-<p>
-  contact works!
-</p>
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+<div fxFlex>
+  <div>
+    <h3>Contact Ons</h3>
+    <hr>
+  </div>
+</div>
+
+<div fxFlex>
+  <h3>Locatie:</h3>
+  <div fxLayout="column" fxLayout.gt-sm="row">
+    <div fxFlex="50" fxFlexOffset="20px">
+      <h4>Ons adres</h4>
+      <address>
+        de Vos van Steenwijklaan 75<br>
+        7902 NP Hoogeveen<br>
+        <i class="fa fa-phone"></i>: 0528-234332<br>
+        <i class="fa fa-envelope"></i>: 
+          <a href="mailto:info@tennis-boost.nl">info@tennis-boost.nl</a>
+      </address>
+    <p></p>
+    <div>
+      <a mat-raised-button href="tel: 0528234332"><i class="fa fa-phone"></i> Bel</a>
+      <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+      <a mat-raised-button href="mailto: info@tennis-boost.nl"><i class="fa fa-envelope-o"></i> Email</a>  
+    </div>
+  </div>
+  <div fxFlex="40">
+    <h4>Kaart van onze locatie</h4>
+  </div>
+</div>
+</div>
+</div>

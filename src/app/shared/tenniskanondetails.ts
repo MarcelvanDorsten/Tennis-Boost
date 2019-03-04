@@ -5,6 +5,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '0',
       naam: 'Tennis Twist',
       foto: '/assets/twist.jpg',
+      aanbevolen: false,
       omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.',
       comments: [
             {
@@ -19,6 +20,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '1',
       naam: 'Tennis Cube',
       foto: '/assets/cube.jpg',
+      aanbevolen: true,
       omschrijving: 'De lichtste, meest compacte tennismachine die beschikbaar is voor beginnende en gevorderde spelers.',
       comments: [
         {
@@ -33,6 +35,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '2',
       naam: 'Tennis Twist',
       foto: '/assets/twist.jpg',
+      aanbevolen: false,
       omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.',
       comments: [
             {
@@ -47,6 +50,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '3',
       naam: 'Tennis Twist',
       foto: '/assets/cube-closed-w-racket-web.jpg',
+      aanbevolen: false,
       omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.',
       comments: [
             {
@@ -61,6 +65,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '4',
       naam: 'Tennis Twist',
       foto: '/assets/cube-panel-web.jpg',
+      aanbevolen: false,
       omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.',
       comments: [
             {
@@ -75,6 +80,7 @@ export const TENNISCANNONS: Tenniscannon[] = [
       id: '5',
       naam: 'Tennis Twist',
       foto: '/assets/tennis3.jpg',
+      aanbevolen: false,
       omschrijving: 'Tennis Twist® is speciaal ontworpen voor beginnende tennisspelers. Het compacte formaat en de eenvoudige bediening maken het een ideale eerste balmachine voor kinderen die net beginnen met tennissen. Als een kind een racket kan slingeren, kan hij of zij met Tennis Twist spelen.',
       comments: [
             {

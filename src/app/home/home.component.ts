@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Tenniscannon } from '../shared/tenniskanon';
+import { TenniskanonService } from '../services/tenniskanon.service';
+import { Promotion } from '../shared/promotie';
+import { PromotieService } from '../services/promotie.service'; 
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  tenniscannon: Tenniscannon;
+  promotion: Promotion;
+
+  constructor(private tenniscannonservice: TenniskanonService,
+    private promotionservice: PromotieService) { }
 
   ngOnInit() {
+    this.tenniscannon = this.tenniscannonservice.getFeaturedTenniscannon();
+    this.promotion = this.promotionservice.getFeaturedPromotion();
   }
 
 }

@@ -13,5 +13,10 @@ export class TenniskanonService {
 getTenniscannons(): Tenniscannon[] {
   return TENNISCANNONS;
 }
-
+getTenniscannon(id: string): Tenniscannon {
+  return TENNISCANNONS.filter((tenniscannon) => (tenniscannon.id === id))[0];
+}
+getFeaturedTenniscannon(): Tenniscannon {
+  return TENNISCANNONS.filter((tenniscannon) => tenniscannon.aanbevolen)[0];
+}
 }

@@ -1,3 +1,36 @@
-<p>
-  home works!
-</p>
++<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+<mat-card *ngIf="tenniscannon" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{tenniscannon.naam | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{tenniscannon.foto}} alt={{tenniscannon.naam}}>
+  <mat-card-content>
+    <p>{{tenniscannon.omschrijving}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="promotion" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{promotion.naam | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{promotion.foto}} alt={{promotion.naam}}>
+  <mat-card-content>
+    <p>{{promotion.omschrijving}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+</div>
