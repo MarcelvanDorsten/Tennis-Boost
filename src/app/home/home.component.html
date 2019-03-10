@@ -1,4 +1,4 @@
-+<div class="container"
+<div class="container"
      fxLayout="row"
      fxLayout.sm="column"
      fxLayout.xs="column"
@@ -32,5 +32,19 @@
     </p>
   </mat-card-content>
 </mat-card>
+
+<mat-card *ngIf="gallery" fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{gallery.naam | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{gallery.foto}} alt={{gallery.naam}}>
+    <mat-card-content>
+      <p>{{gallery.omschrijving}}
+      </p>
+    </mat-card-content>
+  </mat-card>
 
 </div>

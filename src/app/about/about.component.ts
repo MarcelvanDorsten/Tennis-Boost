@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gallery } from '../shared/galerij';
+import { GalerijService } from '../services/galerij.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  galleries: Gallery[];
+
+  constructor(private galleryService: GalerijService) { }
+
 
   ngOnInit() {
+    this.galleries =
+    this.galleryService.getGalleries();
   }
 
 }
