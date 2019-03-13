@@ -22,9 +22,12 @@ export class HomeComponent implements OnInit {
     private galleryService: GalerijService) { }
 
   ngOnInit() {
-    this.tenniscannon = this.tenniscannonservice.getFeaturedTenniscannon();
-    this.promotion = this.promotionservice.getFeaturedPromotion();
-    this.gallery = this.galleryService.getFeaturedGallery();
+    this.tenniscannonservice.getFeaturedTenniscannon()
+    .then(tenniscannon => this.tenniscannon = tenniscannon);
+    this.promotionservice.getFeaturedPromotion()
+    .then(promotion => this.promotion = promotion);
+    this.galleryService.getFeaturedGallery()
+    .then(gallery => this.gallery = gallery);
   }
 
 }

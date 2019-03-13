@@ -10,13 +10,13 @@ export class TenniskanonService {
 
   constructor() { }
 
-getTenniscannons(): Tenniscannon[] {
-  return TENNISCANNONS;
+getTenniscannons(): Promise<Tenniscannon[]> {
+  return Promise.resolve(TENNISCANNONS);
 }
-getTenniscannon(id: string): Tenniscannon {
-  return TENNISCANNONS.filter((tenniscannon) => (tenniscannon.id === id))[0];
+getTenniscannon(id: string): Promise<Tenniscannon> {
+  return Promise.resolve(TENNISCANNONS.filter((tenniscannon) => (tenniscannon.id === id))[0]);
 }
-getFeaturedTenniscannon(): Tenniscannon {
-  return TENNISCANNONS.filter((tenniscannon) => tenniscannon.aanbevolen)[0];
+getFeaturedTenniscannon(): Promise<Tenniscannon> {
+  return Promise.resolve(TENNISCANNONS.filter((tenniscannon) => tenniscannon.aanbevolen)[0]);
 }
 }

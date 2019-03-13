@@ -9,16 +9,16 @@ export class GalerijService {
 
   constructor() { }
 
-  getGalleries(): Gallery[] {
-    return GALLERIES;
+  getGalleries(): Promise<Gallery[]> {
+    return Promise.resolve(GALLERIES);
   }
 
-  getGallery(id: string): Gallery {
-    return GALLERIES.filter((gallery) => (gallery.id === id))[0];
+  getGallery(id: string): Promise<Gallery> {
+    return Promise.resolve(GALLERIES.filter((gallery) => (gallery.id === id))[0]);
   }
   
-  getFeaturedGallery(): Gallery {
-    return GALLERIES.filter((gallery) => gallery.aanbevolen)[0];
+  getFeaturedGallery(): Promise<Gallery> {
+    return Promise.resolve(GALLERIES.filter((gallery) => gallery.aanbevolen)[0]);
   }
 }
 

@@ -19,7 +19,8 @@ tenniscannon: Tenniscannon;
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    this.tenniscannon = this.tenniscannonservice.getTenniscannon(id);
+    this.tenniscannonservice.getTenniscannon(id)
+    .then(tenniscannon => this.tenniscannon = tenniscannon);
   }
 
   goBack(): void {
