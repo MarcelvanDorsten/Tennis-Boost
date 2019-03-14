@@ -24,7 +24,9 @@
         <button mat-button>VERGELIJK</button>
       </mat-card-actions>
     </mat-card>
-  
+  <div fxFlex [hidden]="tenniscannon">
+    <mat-spinner></mat-spinner><h4>Wordt geladen . . . Even geduld a.u.b.</h4>
+  </div>
 </div>
 
 <div fxFlex="40">
@@ -40,6 +42,9 @@
     
   </mat-list-item>
   </mat-list>
+  <div fxFlex [hidden]="tenniscannon">
+    <mat-spinner></mat-spinner><h4>Wordt geladen . . . Even geduld a.u.b.</h4>
+  </div>
 </div>
 
 

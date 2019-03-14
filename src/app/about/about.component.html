@@ -54,18 +54,19 @@
 </div>
 
 
-<div fxFlex>
+<div fxFlex *ngIf="galleries">
 <h2>Corporate Leadership</h2>
-    <mat-list *ngIf="galleries">
+    <mat-list>
         <mat-list-item *ngFor="let gallery of galleries">
           <img matListAvatar src={{gallery.foto}} alt={{gallery.naam}}>
           <h5 matLine>{{gallery.naam}} {{gallery.afkorting}}</h5>
           <p matLine>{{gallery.aanduiding}}</p>
             <p matLine class="demo-1">{{gallery.omschrijving}} </p>
-           
-        
       </mat-list-item>
       </mat-list>
     </div>
-    
+   
+    <div fxFlex [hidden]="galleries">
+      <mat-spinner></mat-spinner> <h4>Wordt geladen . . . Even geduld a.u.b.</h4> 
+    </div>
 </div>

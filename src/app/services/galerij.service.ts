@@ -10,15 +10,26 @@ export class GalerijService {
   constructor() { }
 
   getGalleries(): Promise<Gallery[]> {
-    return Promise.resolve(GALLERIES);
+    return new Promise(resolve => {
+      //Simuleer server vertraging met 2 seconden
+      setTimeout(() => resolve(GALLERIES), 2000);
+    });
   }
 
   getGallery(id: string): Promise<Gallery> {
-    return Promise.resolve(GALLERIES.filter((gallery) => (gallery.id === id))[0]);
+    return new Promise(resolve => {
+      //Simuleer server vertraging met 2 seconden
+      setTimeout(() => resolve(GALLERIES.filter((gallery) => (gallery.id === id))[0]),
+      2000);
+    });
   }
   
   getFeaturedGallery(): Promise<Gallery> {
-    return Promise.resolve(GALLERIES.filter((gallery) => gallery.aanbevolen)[0]);
+    return new Promise(resolve => {
+      //Simuleer server vertraging met 2 seconden
+      setTimeout(() => resolve(GALLERIES.filter((gallery) => gallery.aanbevolen)[0]),
+      2000);
+    });
   }
 }
 
