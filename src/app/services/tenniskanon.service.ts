@@ -24,4 +24,8 @@ getFeaturedTenniscannon(): Observable<Tenniscannon> {
   return of (TENNISCANNONS.filter((tenniscannon) => tenniscannon.aanbevolen)[0])
   .pipe(delay(2000));
    }
+
+ getTenniscannonIds(): Observable<string[] | any> {
+   return of (TENNISCANNONS.map(tenniscannon => tenniscannon.id));
+ }  
 }
