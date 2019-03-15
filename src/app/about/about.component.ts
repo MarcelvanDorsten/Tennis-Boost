@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.galleryService.getGalleries()
-    .then(galleries => this.galleries = galleries);
+    .subscribe(galleries => this.galleries = galleries);
   }
 
 }

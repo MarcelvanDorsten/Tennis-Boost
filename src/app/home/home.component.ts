@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.tenniscannonservice.getFeaturedTenniscannon()
-    .then(tenniscannon => this.tenniscannon = tenniscannon);
+    .subscribe(tenniscannon => this.tenniscannon = tenniscannon);
     this.promotionservice.getFeaturedPromotion()
-    .then(promotion => this.promotion = promotion);
+    .subscribe(promotion => this.promotion = promotion);
     this.galleryService.getFeaturedGallery()
-    .then(gallery => this.gallery = gallery);
+    .subscribe(gallery => this.gallery = gallery);
   }
 
 }

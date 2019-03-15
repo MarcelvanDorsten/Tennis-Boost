@@ -18,7 +18,7 @@ export class VerhuurComponent implements OnInit {
 
   ngOnInit() {
     this.tenniscannonService.getTenniscannons()
-    .then(tenniscannons => this.tenniscannons = tenniscannons);
+    .subscribe(tenniscannons => this.tenniscannons = tenniscannons);
   }
 
 onSelect(tenniscannon: Tenniscannon) {

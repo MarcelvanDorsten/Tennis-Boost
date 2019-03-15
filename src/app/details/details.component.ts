@@ -20,7 +20,7 @@ tenniscannon: Tenniscannon;
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.tenniscannonservice.getTenniscannon(id)
-    .then(tenniscannon => this.tenniscannon = tenniscannon);
+    .subscribe(tenniscannon => this.tenniscannon = tenniscannon);
   }
 
   goBack(): void {
