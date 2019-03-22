@@ -12,15 +12,15 @@ import { TenniskanonService } from '../services/tenniskanon.service';
 export class VerhuurComponent implements OnInit {
 
   tenniscannons: Tenniscannon[];
+  errMess: string;
   
   constructor (private tenniscannonService: TenniskanonService,
     @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
     this.tenniscannonService.getTenniscannons()
-    .subscribe(tenniscannons => this.tenniscannons = tenniscannons);
+    .subscribe(tenniscannons => this.tenniscannons = tenniscannons,
+      errmess => this.errMess = <any>errmess);
   }
-
-
 
 }

@@ -18,8 +18,12 @@
     </p>
   </mat-card-content>
 </mat-card>
-<div fxFlex [hidden]="tenniscannon">
+<div fxFlex [hidden]="tenniscannon || tenniscannonErrMess">
   <mat-spinner></mat-spinner><h4>Wordt geladen . . . Even geduld a.u.b.</h4>
+</div>
+<div fxFlex *ngIf="tenniscannonErrMess">
+  <h2>Fout</h2>
+  <h4>{{tenniscannonErrMess}}</h4>
 </div>
 
 

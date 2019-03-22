@@ -21,8 +21,12 @@ fxLayoutGap="10px">
 </mat-grid-list>
 </div>
 
-<div fxFlex [hidden]="tenniscannons">
+<div fxFlex [hidden]="tenniscannons || errMess">
   <mat-spinner></mat-spinner> <h4>Wordt geladen . . . Even geduld a.u.b.</h4> 
+</div>
+<div fxFlex *ngIf="errMess">
+  <h2>Fout</h2>
+  <h4>{{errMess}}</h4>
 </div>
 
 </div>

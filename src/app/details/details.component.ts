@@ -16,6 +16,7 @@ tenniscannon: Tenniscannon;
 tenniscannonIds: string[];
 prev: string;
 next: string;
+errMess: string;
 
   constructor(private tenniscannonService: TenniskanonService,
     private route: ActivatedRoute,
@@ -26,7 +27,8 @@ next: string;
     this.tenniscannonService.getTenniscannonIds()
     .subscribe((tenniscannonIds) => this.tenniscannonIds = tenniscannonIds);
   this.route.params.pipe(switchMap((params: Params) => this.tenniscannonService.getTenniscannon(params['id'])))
-        .subscribe(tenniscannon => { this.tenniscannon = tenniscannon; this.setPrevNext(tenniscannon.id); });
+        .subscribe(tenniscannon => { this.tenniscannon = tenniscannon; this.setPrevNext(tenniscannon.id); },
+        errmess => this.errMess = <any>errmess);
 }
 
 setPrevNext(tenniscannonId: string) {

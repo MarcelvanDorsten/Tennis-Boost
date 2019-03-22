@@ -14,6 +14,7 @@ import { GalerijService } from '../services/galerij.service';
 export class HomeComponent implements OnInit {
 
   tenniscannon: Tenniscannon;
+  tenniscannonErrMess: string;
   promotion: Promotion;
   gallery: Gallery;
 
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.tenniscannonservice.getFeaturedTenniscannon()
-    .subscribe(tenniscannon => this.tenniscannon = tenniscannon);
+    .subscribe(tenniscannon => this.tenniscannon = tenniscannon,
+      errmess => this.tenniscannonErrMess = <any>errmess);
     this.promotionservice.getFeaturedPromotion()
     .subscribe(promotion => this.promotion = promotion);
     this.galleryService.getFeaturedGallery()

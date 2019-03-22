@@ -27,6 +27,7 @@ import { DetailsComponent } from './details/details.component';
 import { TenniskanonService } from './services/tenniskanon.service';
 import { PromotieService } from './services/promotie.service';
 import { GalerijService } from './services/galerij.service';
+import { ProcessHTTPmsgService } from './services/process-httpmsg-service.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -75,6 +76,7 @@ import { baseURL } from './shared/baseurl';
     TenniskanonService,
     PromotieService,
     GalerijService,
+    ProcessHTTPmsgService,
     { provide: 'BaseURL', useValue: baseURL }
   ],
   entryComponents: [
