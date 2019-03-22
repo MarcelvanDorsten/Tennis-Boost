@@ -15,7 +15,7 @@ fxLayoutGap="10px">
     <mat-grid-tile-footer>
       <h1>{{tenniscannon.naam | uppercase}}</h1>
     </mat-grid-tile-footer>
-    <img height="200px" src={{tenniscannon.foto}} alt={{tenniscannon.naam}}>
+    <img height="200px" src="{{BaseURL + tenniscannon.foto}}" alt={{tenniscannon.naam}}>
     <p>{{tenniscannon.omschrijving}}</p>
   </mat-grid-tile> 
 </mat-grid-list>

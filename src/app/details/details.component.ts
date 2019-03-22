@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Tenniscannon } from '../shared/tenniskanon';
@@ -19,7 +19,8 @@ next: string;
 
   constructor(private tenniscannonService: TenniskanonService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
     this.tenniscannonService.getTenniscannonIds()

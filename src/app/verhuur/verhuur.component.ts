@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Tenniscannon } from '../shared/tenniskanon';
 import { TenniskanonService } from '../services/tenniskanon.service';
@@ -12,17 +12,15 @@ import { TenniskanonService } from '../services/tenniskanon.service';
 export class VerhuurComponent implements OnInit {
 
   tenniscannons: Tenniscannon[];
-  selectedTenniscannon: Tenniscannon;
-
-  constructor (private tenniscannonService: TenniskanonService) { }
+  
+  constructor (private tenniscannonService: TenniskanonService,
+    @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
     this.tenniscannonService.getTenniscannons()
     .subscribe(tenniscannons => this.tenniscannons = tenniscannons);
   }
 
-onSelect(tenniscannon: Tenniscannon) {
-  this.selectedTenniscannon = tenniscannon;
-}
+
 
 }

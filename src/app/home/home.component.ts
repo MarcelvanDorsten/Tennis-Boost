@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Tenniscannon } from '../shared/tenniskanon';
 import { TenniskanonService } from '../services/tenniskanon.service';
 import { Promotion } from '../shared/promotie';
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private tenniscannonservice: TenniskanonService,
     private promotionservice: PromotieService,
-    private galleryService: GalerijService) { }
+    private galleryService: GalerijService,
+    @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
     this.tenniscannonservice.getFeaturedTenniscannon()

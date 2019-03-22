@@ -1,31 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Tenniscannon } from '../shared/tenniskanon';
-import { TENNISCANNONS } from '../shared/tenniskanondetails';
 import { Observable, of } from 'rxjs';
-import { delay } from'rxjs/operators';
+import { delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TenniskanonService {
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
 getTenniscannons(): Observable<Tenniscannon[]> {
-  return of (TENNISCANNONS).pipe(delay(2000));
+  return this.http.get<Tenniscannon[]>(baseURL + 'tenniscannons');
   }
 
 getTenniscannon(id: string): Observable<Tenniscannon> {
-  return of (TENNISCANNONS.filter((tenniscannon) => (tenniscannon.id === id))[0])
-  .pipe(delay(2000));
+  return this.http.get<Tenniscannon>(baseURL + 'tenniscannons/' + id);
   }
 
 getFeaturedTenniscannon(): Observable<Tenniscannon> {
-  return of (TENNISCANNONS.filter((tenniscannon) => tenniscannon.aanbevolen)[0])
-  .pipe(delay(2000));
-   }
+  return this.http.get<Tenniscannon[]>(baseURL + 'tenniscannons?aanbevolen=true')
+  .pipe(map(tenniscannons => tenniscannons[0]));
+  }
 
- getTenniscannonIds(): Observable<string[] | any> {
-   return of (TENNISCANNONS.map(tenniscannon => tenniscannon.id));
+ getTenniscannonIds(): Observable<number[] | any> {
+   return this.getTenniscannons().pipe(map(tenniscannons => tenniscannons.map(tenniscannon => tenniscannon.id)));
  }  
 }
+

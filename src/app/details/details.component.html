@@ -14,7 +14,7 @@
           <h3 *ngIf="tenniscannon">{{tenniscannon.naam | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src={{tenniscannon.foto}} alt={{tenniscannon.naam}}>
+      <img mat-card-image src="{{BaseURL + tenniscannon.foto}}" alt={{tenniscannon.naam}}>
       <mat-card-content>
         <p>{{tenniscannon.omschrijving}}</p>
       </mat-card-content>
