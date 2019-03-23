@@ -57,6 +57,32 @@
     <h4>{{errMess}}</h4>
   </div>
 </div>
+<div fxFlex fxFlexOffset="20px" class="form-size">
+  <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="gebruiker"
+      placeholder="Naam" type="text" required>
+      <mat-error *ngIf="formErrors.gebruiker">
+        {{ formErrors.gebruiker }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+    <!-- <mat-slider min="1" max="5" step="1" thumbLabel tickInterval="1">  -->
+     <input matInput formControlName="schaal"
+     placeholder= "5" type="number"> 
+    <!-- </mat-slider>  -->
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <textarea matInput formControlName="opmerking"
+    placeholder="Uw opmerking" rows=5 required>
+  </textarea>
+    <mat-error *ngIf="formErrors.opmerking">
+      {{ formErrors.opmerking }}
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+  </form>
 
+</div>
 
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Tenniscannon } from '../shared/tenniskanon';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { baseURL } from '../shared/baseurl';
 import { map, catchError } from 'rxjs/operators';
 import { ProcessHTTPmsgService } from './process-httpmsg-service.service'; 
@@ -37,5 +37,15 @@ getFeaturedTenniscannon(): Observable<Tenniscannon> {
    return this.getTenniscannons().pipe(map(tenniscannons => tenniscannons.map(tenniscannon => tenniscannon.id)))
    .pipe(catchError(error => error));
  }  
+
+putTenniscannon(tenniscannon: Tenniscannon): Observable<Tenniscannon> {
+  const httpOptions = {
+    headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
+return this.http.put<Tenniscannon>(baseURL + 'tenniscannons/' + tenniscannon.id, tenniscannon, httpOptions)
+.pipe(catchError(this.processHTTPMsgService.handleError));
+}
 }
 
