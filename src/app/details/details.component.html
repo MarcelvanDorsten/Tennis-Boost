@@ -7,7 +7,7 @@
   fxLayoutGap.xs="0">
 
 
-  <div fxFlex="40" *ngIf="tenniscannon">
+  <div fxFlex="40" *ngIf="tenniscannon" [@visibility]="visibility">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -26,12 +26,12 @@
         <button mat-button>VOORKEUR</button>
         <button mat-button>VERGELIJK</button>
         <span class="flex-spacer"></span>
-        <button mat-button [routerLink]="['details', next]">
+        <button mat-button [routerLink]="['/details', next]">
           <span class="fa fa-chevron-right fa-lg"></span>
         </button>
       </mat-card-actions>
     </mat-card>
-  <div fxFlex [hidden]="tenniscannon">
+  <div fxFlex [hidden]="tenniscannon" [@visibility]="visibility">
     <mat-spinner></mat-spinner><h4>Wordt geladen . . . Even geduld a.u.b.</h4>
   </div>
 </div>
@@ -67,10 +67,10 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="half-width">
-    <!-- <mat-slider min="1" max="5" step="1" thumbLabel tickInterval="1">  -->
+     <mat-slider min="1" max="5" step="1" thumbLabel tickInterval="1">  
      <input matInput formControlName="schaal"
      placeholder= "5" type="number"> 
-    <!-- </mat-slider>  -->
+    </mat-slider>  
   </mat-form-field>
   <mat-form-field class="full-width">
     <textarea matInput formControlName="opmerking"

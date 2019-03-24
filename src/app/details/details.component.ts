@@ -4,14 +4,28 @@ import { Location } from '@angular/common';
 import { Tenniscannon } from '../shared/tenniskanon';
 import { TenniskanonService } from '../services/tenniskanon.service';
 import { switchMap } from 'rxjs/operators';
-import { MatSliderModule } from '@angular/material/slider';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/beoordelingen';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  animations: [
+    trigger('visibility', [
+      state('shown', style({
+        transform: 'scale(1.0)',
+        opacity: 1
+      })),
+      state('hidden', style({
+        transform: 'scale(0.5)',
+        opacity: 0
+      })),
+      transition('* => *', animate('0.5s ease-in-out'))
+    ])
+  ]
 })
 export class DetailsComponent implements OnInit {
 
@@ -24,6 +38,7 @@ comment: Comment;
 commentForm: FormGroup;
 errMess: string;
 tenniscannoncopy: Tenniscannon;
+visibility = 'shown';
 
 formErrors = {
   'gebruiker': '',
@@ -51,8 +66,8 @@ validationMessages = {
   ngOnInit() {
     this.tenniscannonService.getTenniscannonIds()
     .subscribe((tenniscannonIds) => this.tenniscannonIds = tenniscannonIds);
-  this.route.params.pipe(switchMap((params: Params) => this.tenniscannonService.getTenniscannon(params['id'])))
-        .subscribe(tenniscannon => { this.tenniscannon = tenniscannon; this.setPrevNext(tenniscannon.id); },
+  this.route.params.pipe(switchMap((params: Params) => { this.visibility ='hidden'; return this.tenniscannonService.getTenniscannon(params['id']); }))
+        .subscribe(tenniscannon => { this.tenniscannon = tenniscannon; this.tenniscannoncopy = tenniscannon; this.setPrevNext(tenniscannon.id); this.visibility = 'shown'; },
         errmess => this.errMess = <any>errmess);
 }
 

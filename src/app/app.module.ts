@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -72,6 +73,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatCheckboxModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatSliderModule,
     MatProgressSpinnerModule
   ],
   providers: [
