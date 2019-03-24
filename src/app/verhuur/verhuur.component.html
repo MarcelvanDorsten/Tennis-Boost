@@ -9,7 +9,7 @@ fxLayoutGap="10px">
   </div>
 </div>
 
-<div fxFlex *ngIf="tenniscannons">
+<div fxFlex *ngIf="tenniscannons" [@expand]>
   <mat-grid-list cols="2" rowHeight="200px">
   <mat-grid-tile *ngFor="let tenniscannon of tenniscannons" [routerLink]="['/details',tenniscannon.id]" appHighlight>
     <mat-grid-tile-footer>
